@@ -13,12 +13,12 @@ export const AppDataSource = new DataSource({
     database: process.env.DB_NAME,
     /*  only in development - This tells TypeORM to automatically create (or update) database tables based on your entity classes every time the app runs
                              Never use in production, as it can drop/modify tables and data */
-    synchronize: false,
+    synchronize: true,
     // synchronize: process.env.NODE_ENV !== "production",  /* For Production */
 
     /* true → logs all DB queries and actions (handy for debugging)
         false → keeps console clean (good in production) */
-    logging: false,
+    logging: true,
     // logging: process.env.NODE_ENV !== "production", /* For Production */
     entities: [__dirname + "/entity/**/*.ts"]
 
